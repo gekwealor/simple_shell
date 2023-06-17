@@ -3,8 +3,9 @@
 #include <string.h>
 
 /**
- * Com - Function that handles commands
- * @lines - Handles lines with arguments
+ * Commands - Function that handles commands
+ * @ac - Handles lines with arguments
+ * @av - Da array of argument strings.
  * Return: Always 0
  */
 
