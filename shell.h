@@ -5,5 +5,11 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <sys/wait.h>
+#include <string.h>
+#include "shell.h"
 
-int main(int ac, char **av)
+int main(void)
+char *getenv(const char *getenv);
+ssize_t input_buff(ino_t *info, char **buff, size_t *len)
+
+#endif
