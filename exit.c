@@ -7,14 +7,12 @@
 
 /**
  * main - A builtin that exits da crazy shell
- * command - Just exit
- * MAX_LENGTH - No damn arguments to be freaking handled.  
+ * command - is giving MAX_LENGTH
+ * MAX_LENGTH - No damn arguments to be freaking handled.
  * You don’t have to handle any argument to the built-in exit
- *
- * Return -  0
+ * Return - always 0
  */
-
-void (char command, char **MAX_LENGTH)
+int main(char command[MAX_LENGTH])
 {
 	char command[MAX_LENGTH];
 
@@ -29,7 +27,11 @@ void (char command, char **MAX_LENGTH)
 		{
 		exit(0);
 		}
-	}
+		else
+		{
+			printf("Command not understood: %s\n", command);
+		}
 
-	return (0);
+		return (0);
+	}
 }

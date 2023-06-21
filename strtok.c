@@ -6,21 +6,22 @@
 #define BUFFER_SIZE 1024
 
 /**
- * position - a function that does not use strtok
- * bytes - Please read the bytes
- * buffer - the size of buffer
+ * main - implements the function of strtok
+ * @position - a function that does not use strtok
+ * @bytes - Please read the bytes
+ * @buffer - the size of buffer
  * Return: Always 0
  */
 
 int main(char position, *buffer, **bytes)
 {
-	static int position ;
+	static int position;
 	static char buffer[BUFFER_SIZE];
 	static int Readbytes;
 	char *line = NULL;
 	int lengthline;
-	
-	while(1)
+
+	while (1)
 	{
 		if (position >= Readbytes)
 		{
@@ -29,15 +30,15 @@ int main(char position, *buffer, **bytes)
 			if (Readbytes <= 0)
 				break;
 		}
-		while(position <= Readbytes)
+		while (position <= Readbytes)
 		{
 			char Currentchar = buffer[position++];
-			if (Currentchar = buffer == '\n')
-			
+		
+			if (Currentchar = buffer)
 			{
 				line = (char *)malloc((lengthline + 1) * sizeof(char));
 				memcpy(line, buffer, lengthline);
-				line [lengthline] = '\0';
+				line  = '\0';
 
 			}
 			return (0);

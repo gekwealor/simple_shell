@@ -4,13 +4,13 @@
 #include <stdlib.h>
 
 /**
- * getenv - implement da builtin env
+ * main - implement da builtin env
  * @prints - make sure it prints the current environment
  * @argc - Da number of command-line arguments.
  * @argv - An array of strings repping the command-line arguments.
  * Return: 0 as always
  */
-int main(int argc, char *argv[])
+int main(void)
 {
 	int pid;
 	int status;

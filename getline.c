@@ -6,14 +6,13 @@
 #define BUFFER_SIZE 1024
 
 /**
- * input_buff - Use da buffer to read many chars
+ * buff - Use da buffer to read many chars
  * call the least possible then read
- * @static - Use da static variables
- *
+ * @info - Use da static variables
+ * @len - Da pointer of size_t
  * Return: bytes read
  */
-ssize_t input_buff(ino_t *info, char **buff, size_t *len)
-
+ssize_t input_buff(ino_t *info, char **buff, size_t *len);
 {
 	ssize_t b = 0;
 	size_t len_r = 0;
@@ -24,7 +23,7 @@ ssize_t input_buff(ino_t *info, char **buff, size_t *len)
 		(b = getline(buff, &len_r, stdin));
 
 	else
-		b = getline(info, buff, &len_r);
+		b = getline(info, buff, size_t);
 
 	if (b > 0)
 	{
@@ -34,9 +33,6 @@ ssize_t input_buff(ino_t *info, char **buff, size_t *len)
 			b--;
 		}
 		info->linelenght = 1;
-		remove_comments(*buff);
-		build_latest_list(info, *buf, info->latestcount++);
-		/* if (_strchr(*buff, ';')) Does this embody a command chain? */
 		{
 			*len = b;
 			info->cmd_buff = buff;
@@ -48,20 +44,20 @@ ssize_t input_buff(ino_t *info, char **buff, size_t *len)
 
 /**
  * get_input - Subtract newline from old
- * @info: Da parameter struct
- *
+ * @info - Da parameter struct
+ * @buff_r - Da pointer of a character array
+ * BUFF_FLUSH - new character to be added 
  * Return: Freaking byte to be read
  */
 
-ssize_t get_input(ino_t *info)
-
+ssize_t get_input(ino_t *info, char *buff_r)
 {
 	static char *buff,
 	static size_t len, x, y;
 	size_t b = 0;
-	char **buff_r = &(info->arg), *r;
+	char *buff_r = &(info -> arg), *r;
 
-	_putchar(BUFF_FLUSH);
+	putchar(BUFF_FLUSH);
 	b = input_buff(&buff, info, &len);
 
 	if (b == -1)
@@ -103,7 +99,6 @@ ssize_t get_input(ino_t *info)
  * Return: d
  */
 int getline(ino_t *info, size_t *length, char **pntr)
-
 {
 	static char buff[READ_BUFF_SIZE];
 	static size_t i, len;
@@ -122,4 +117,3 @@ int getline(ino_t *info, size_t *length, char **pntr)
 		return (-1);
 
 }
-
