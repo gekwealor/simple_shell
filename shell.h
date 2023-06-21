@@ -11,5 +11,6 @@
 int main(void)
 char *getenv(const char *getenv);
 ssize_t input_buff(ino_t *info, char **buff, size_t *len)
+int main(char cmd, char *args)
 int main(char command[MAX_LENGTH])
 #endif
