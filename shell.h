@@ -8,9 +8,11 @@
 #include <string.h>
 #include "shell.h"
 
-int main(void)
+int handle(char *cmmd);
 char *getenv(const char *getenv);
-ssize_t input_buff(ino_t *info, char **buff, size_t *len)
-int main(char cmd, char *args)
-int main(char command[MAX_LENGTH])
+ssize_t input_buff(ino_t *info, char **buff, size_t *len);
+int main(char cmdz, char argz);
+int comments(char commands);
+int update_env(char cwd, char *arg);
+int env(char prints, char *argc, char *argv);
 #endif

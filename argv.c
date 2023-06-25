@@ -3,26 +3,23 @@
 #include <string.h>
 
 /**
- * main - Da fuction that handles commands
- * ac - Func that handles number with arguments
- * av - Da array of strings
- * A function prints the number of arguments and function that handles command
- * also with each arguments string
- *
+ * main - A freaking function that handles commands
+ * @ac: Function that handles an array
+ * @av: An array of strings
  * Return: Always 0
  */
-
-int main(void)
+int main(char ac, char *av)
 {
+
 	int index = 0;
-	char *msg = "Alx is tough";
+	char *msg = "Alx is wild";
 
 	printf("message: %s\n", msg);
 	printf("Number of arguments: %d\n", ac);
 
 	while (av[index])
 	{
-		printf("av[%d], %s\n", index, av[index]);
+		printf("av[%d], %d\n", index, av[index]);
 		++index;
 	}
 

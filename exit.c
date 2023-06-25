@@ -6,32 +6,32 @@
 #define MAX_LENGTH 1024
 
 /**
- * main - A builtin that exits da crazy shell
- * command - is giving MAX_LENGTH
- * MAX_LENGTH - No damn arguments to be freaking handled.
- * You don’t have to handle any argument to the built-in exit
- * Return - always 0
+ * comments- A builtin that exits da crazy shell
+ * @commands: is giving MAX_LENGTH
+ *
+ * Return: always 0
  */
-int main(char command[MAX_LENGTH])
+int comments(char commands)
 {
-	char command[MAX_LENGTH];
+	char main[MAX_LENGTH];
 
 	while (1)
 	{
 		printf("ALX IS KILLING ME");
-		fgets(command, MAX_LENGTH, stdin);
+		fgets(commands, MAX_LENGTH, stdin);
 
-		command[strcspn(command, "\n")] = '\0';
+		commands[strcspn(int, "\n")] = '\0';
 
-		if (strcmp(command, "exit") == 0)
+		if (strcmp(char, "exit") == 0)
 		{
 		exit(0);
 		}
 		else
 		{
-			printf("Command not understood: %s\n", command);
+			printf("Command not understood: %d\n", commands);
 		}
 
 		return (0);
 	}
+
 }

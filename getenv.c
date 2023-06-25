@@ -10,8 +10,7 @@
  * @argv - An array of strings repping the command-line arguments.
  * Return: 0 as always
  */
-int main(void)
-{
+void main(char prints, char *argc, char *argv);
 	int pid;
 	int status;
 

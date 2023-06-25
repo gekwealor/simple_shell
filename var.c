@@ -7,38 +7,37 @@
 
 /**
  * main - Da real function that handles command
- * cmd - executed the command
- * args - separator to be handled
- * MAX_LENGTH - an array of strings to be reported
- * status - result of the separator function
- * Return - 0
+ * @cmdz: executed the command
+ * @argz:  separator to be handled
+ *
+ * Return:  0
  */
-int main(char cmd, char *args)
+int main(char cmdz, char argz)
 {
 	int status;
-	char cmd[MAX_LENGTH];
-	char *args[MAX_LENGTH];
+	char cmdz[MAX_LENGTH];
+	char argz[MAX_LENGTH];
 
 	while (1)
 	{
 		printf("Chill ALX");
-		fgets(cmd, MAX_LENGTH, stdin);
-		cmd[strcspn(cmd, "\n")] = '\0';
+		fgets(cmdz, MAX_LENGTH, stdin);
+		cmdz[strcspn(cmdz, "\n")] = '\0';
 
-		char *token = strtok(cmd, " ");
+		char *token = strtok(cmdz, " ");
 		int g = 0;
 
 		while (token != NULL)
 		{
-			args[g++] = token;
+			argz[g++] == token;
 			token = strtok(NULL, " ");
 		}
-		args[g] = NULL;
+		argz[g] = NULL;
 		pid_t pid = fork();
 
 		if (pid == 0)
 		{
-			execvp(args[0], args);
+			execvp(argz[0], argz);
 			perror("eexecvp");
 			exit(EXIT_FAILURE);
 		}

@@ -6,13 +6,13 @@
 #define BUFFER_SIZE 1024
 
 /**
- * buff - Use da buffer to read many chars
- * call the least possible then read
- * @info - Use da static variables
- * @len - Da pointer of size_t
+ * input_buff - Use da buffer to read many chars
+ * @buff: call the least possible then read
+ * @info: Use da static variables
+ * @len: Da pointer of size_t
  * Return: bytes read
  */
-ssize_t input_buff(ino_t *info, char **buff, size_t *len);
+ssize_t input_buff(ino_t *info, char **buff, size_t *len)
 {
 	ssize_t b = 0;
 	size_t len_r = 0;
@@ -43,10 +43,10 @@ ssize_t input_buff(ino_t *info, char **buff, size_t *len);
 }
 
 /**
- * get_input - Subtract newline from old
- * @info - Da parameter struct
- * @buff_r - Da pointer of a character array
- * BUFF_FLUSH - new character to be added 
+ * get_input- Subtract newline from old
+ * @info: Da parameter struct
+ * @buff_r: Da pointer of a character array
+ * BUFF_FLUSH: new character to be added
  * Return: Freaking byte to be read
  */
 
@@ -55,7 +55,7 @@ ssize_t get_input(ino_t *info, char *buff_r)
 	static char *buff,
 	static size_t len, x, y;
 	size_t b = 0;
-	char *buff_r = &(info -> arg), *r;
+	char *buff_r = &(info->arg), *r;
 
 	putchar(BUFF_FLUSH);
 	b = input_buff(&buff, info, &len);
@@ -93,15 +93,18 @@ ssize_t get_input(ino_t *info, char *buff_r)
 
 /**
  * getline - STDIN gives the next line of input
- * @length - Da size of replicated pointer is not NULL.
- * @info - Gives the parameter
- * @pntr - pointer is addressed, given NULL or replicated
+ * @length: Da size of replicated pointer is not NULL.
+ * @info: Gives the parameter
+ * READ_BUFF_SIZE: new buff size to be read
+ * @pntr: pointer is addressed, given NULL or replicated
  * Return: d
  */
 int getline(ino_t *info, size_t *length, char **pntr)
 {
-	static char buff[READ_BUFF_SIZE];
-	static size_t i, len;
+	char buff[READ_BUFF_SIZE];
+
+	int size_t i, len;
+
 	size_t p;
 	size_t d = 0, d = 0;
 	char *r = NULL, *new_r = NULL, *e;
@@ -112,7 +115,7 @@ int getline(ino_t *info, size_t *length, char **pntr)
 	if (i == len)
 		i = len = 0;
 
-	d = read_buff(buff, info, &len)
+	d = read_buff(buff, info, &len);
 	if (d == -1 || (d == 0 && len == 0))
 		return (-1);
 
