@@ -6,6 +6,7 @@
 #include <stdio.h>
 #include <sys/wait.h>
 #include <string.h>
+#include <sys/stat.h>
 #include "shell.h"
 
 char **tokenise(char *line);
@@ -20,4 +21,5 @@ char *_strdup(char *s);
 char *_strtok(char *str, const char *delim);
 extern char **environ;
 int execute(char **args);
+char *find_path(char *command);
 #endif
