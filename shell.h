@@ -19,4 +19,5 @@ int _strcmp(char *s1, char *s2);
 char *_strdup(char *s);
 char *_strtok(char *str, const char *delim);
 extern char **environ;
+int execute(char **args);
 #endif
