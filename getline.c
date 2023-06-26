@@ -6,117 +6,26 @@
 #define BUFFER_SIZE 1024
 
 /**
- * input_buff - Use da buffer to read many chars
- * @buff: call the least possible then read
- * @info: Use da static variables
- * @len: Da pointer of size_t
- * Return: bytes read
+ * read_line - Function that uses getline to read input
+ * Return: line read
  */
-ssize_t input_buff(ino_t *info, char **buff, size_t *len)
+
+char *read_line(void)
 {
-	ssize_t b = 0;
-	size_t len_r = 0;
 	char *line = NULL;
-	int lengthline = 0;
+	ssize_t bufsize = 0;
 
-	if
-		(b = getline(buff, &len_r, stdin));
-
-	else
-		b = getline(info, buff, size_t);
-
-	if (b > 0)
+	if (getline(&line, &bufsize, stdin) == -1)
 	{
-		if ((*buff)[b - 1] == '\n')
+		if (feof(stdin))
 		{
-			(*buff)[b - 1] = '\0';
-			b--;
+			exit(EXIT_SUCCESS);
 		}
-		info->linelenght = 1;
+		else
 		{
-			*len = b;
-			info->cmd_buff = buff;
+			perror("lsh: getline\n");
+			exit(EXIT_FAILURE);
 		}
 	}
-
-	return (b);
-}
-
-/**
- * get_input- Subtract newline from old
- * @info: Da parameter struct
- * @buff_r: Da pointer of a character array
- * BUFF_FLUSH: new character to be added
- * Return: Freaking byte to be read
- */
-
-ssize_t get_input(ino_t *info, char *buff_r)
-{
-	static char *buff,
-	static size_t len, x, y;
-	size_t b = 0;
-	char *buff_r = &(info->arg), *r;
-
-	putchar(BUFF_FLUSH);
-	b = input_buff(&buff, info, &len);
-
-	if (b == -1)
-		return (-1);
-	if (len)
-		y = x;
-	r = buff + i;
-
-	check_chain(buff, info, &y, x, len);
-	while (y < len)
-	{
-		if (is_chain(info, buff, &y))
-			break;
-		y++;
-	}
-
-	x = y + 1;
-	if (x >= len)
-	{
-		x = len = 0;
-		info->cmd_buff_type = CMD_NORM;
-
-	}
-
-	*buff_r = r;
-	return (_strlen(r));
-	{
-	*buff_r = buff;
-
-	return (r);
-	}
-}
-
-/**
- * getline - STDIN gives the next line of input
- * @length: Da size of replicated pointer is not NULL.
- * @info: Gives the parameter
- * READ_BUFF_SIZE: new buff size to be read
- * @pntr: pointer is addressed, given NULL or replicated
- * Return: d
- */
-int getline(ino_t *info, size_t *length, char **pntr)
-{
-	char buff[READ_BUFF_SIZE];
-
-	int size_t i, len;
-
-	size_t p;
-	size_t d = 0, d = 0;
-	char *r = NULL, *new_r = NULL, *e;
-
-	r = *pntr;
-	if (r && length)
-		d = *length;
-	if (i == len)
-		i = len = 0;
-
-	d = read_buff(buff, info, &len);
-	if (d == -1 || (d == 0 && len == 0))
-		return (-1);
-
+	return (line);
 }

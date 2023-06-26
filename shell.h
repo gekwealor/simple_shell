@@ -10,7 +10,8 @@
 
 char **tokenise(char *line);
 char *getenv(const char *getenv);
-ssize_t input_buff(ino_t *info, char **buff, size_t *len);
+void loop(void);
+char *read_line(void);
 int main(char cmdz, char argz);
 int comments(char commands);
 int update_env(char cwd, char *arg);
