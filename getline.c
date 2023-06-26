@@ -15,6 +15,11 @@ char *read_line(void)
 	char *line = NULL;
 	ssize_t bufsize = 0;
 
+	if (isatty(STDIN_FILENO) == 1)
+	{
+		write(STDOUT_FILENO, "$ ", 2);
+	}
+
 	if (getline(&line, &bufsize, stdin) == -1)
 	{
 		if (feof(stdin))
