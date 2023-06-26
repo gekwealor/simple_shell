@@ -6,14 +6,14 @@
 #define BUFFER_SIZE 1024
 
 /**
- * main - implements the function of strtok
+ * stroke- implements the function of strtok
  * @position: a function that does not use strtok
  * @bytes: Please read the bytes
  * @buffer: the size of buffer
  * Return: Always 0
  */
 
-int main(char position, char *buffer, char *bytes)
+int stroke(char position, char *buffer, char *bytes)
 {
 	static int position;
 	static char buffer[BUFFER_SIZE];

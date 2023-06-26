@@ -4,15 +4,17 @@
 #include <stdlib.h>
 
 /**
- * main - implement da builtin env
- * @prints - make sure it prints the current environment
- * @argc - Da number of command-line arguments.
- * @argv - An array of strings repping the command-line arguments.
+ * _getenv - implement da builtin env
+ * @prints: make sure it prints the current environment
+ * @argc: Da number of command-line arguments.
+ * @argv: An array of strings repping the command-line arguments.
  * Return: 0 as always
  */
-void main(char prints, char *argc, char *argv);
+int _getenv(char prints, char *argc, char *argv);
 	int pid;
 	int status;
+
+	pid_t pid;
 
 	pid = fork();
 	if (pid == 0)
