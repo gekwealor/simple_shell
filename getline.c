@@ -13,7 +13,7 @@
 char *read_line(void)
 {
 	char *line = NULL;
-	ssize_t bufsize = 0;
+	size_t bufsize = 0;
 
 	if (isatty(STDIN_FILENO) == 1)
 	{

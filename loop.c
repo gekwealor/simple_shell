@@ -1,3 +1,4 @@
+#include "shell.h"
 /**
  * loop -Function that implements an infinite loop and executes other functions
  */
@@ -17,7 +18,7 @@ void loop(void)
 			free(line);
 			break;
 		}
-		args = split_line(line);
+		args = tokenise(line);
 		status = execute(args);
 
 		free(line);

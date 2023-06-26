@@ -10,7 +10,7 @@
 int main(int ac __attribute__((unused)), char **av __attribute__((unused)))
 {
 
-	lsh_loop();
+	loop();
 
 	return (0);
 }
