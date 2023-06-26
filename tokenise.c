@@ -11,23 +11,27 @@
 char **tokenise(char *line)
 {
 	int bufsize = MAX_COM_LENGTH, position = 0;
-	char **tokens = malloc(bufsize * sizeof(char*));
+	char **tokens = malloc(bufsize * sizeof(char *));
 	char *token;
 
-	if (!tokens) {
+	if (!tokens)
+	{
 		perror("Failed to allocate memory");
 		exit(EXIT_FAILURE);
 	}
 
 	token = strtok(line, DELIM);
-	while (token != NULL) {
+	while (token != NULL)
+	{
 		tokens[position] = token;
 		position++;
 
-		if (position >= bufsize) {
+		if (position >= bufsize)
+		{
 			bufsize += MAX_COM_LENGTH;
-			tokens = realloc(tokens, bufsize * sizeof(char*));
-			if (!tokens) {
+			tokens = realloc(tokens, bufsize * sizeof(char *));
+			if (!tokens)
+			{
 				perror("Failed to allocate memory");
 				exit(EXIT_FAILURE);
 			}
@@ -36,5 +40,5 @@ char **tokenise(char *line)
 		token = strtok(NULL, DELIM);
 	}
 	tokens[position] = NULL;
-	return tokens;
+	return (tokens);
 }
