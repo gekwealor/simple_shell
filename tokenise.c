@@ -3,7 +3,7 @@
 #define MAX_COM_LENGTH 100
 #define DELIM " \t\r\n\a"
 /**
- * handle- A function that breaks into tokens
+ * tokenise - A function that breaks into tokens
  * @line: String to break into tokens
  * Return: 0
  */
