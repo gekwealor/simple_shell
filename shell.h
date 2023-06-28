@@ -7,7 +7,7 @@
 #include <sys/wait.h>
 #include <string.h>
 #include <sys/stat.h>
-#include "shell.h"
+
 
 char **tokenise(char *line);
 char *getenv(const char *getenv);
@@ -23,16 +23,7 @@ extern char **environ;
 int execute(char **args);
 char *find_path(char *command);
 int _cd(char **args);
-int env_hsh(char **args);
-int exit_hsh(char **args);
-char *inbuilt_str[] = {
-	"cd",
-	"env",
-	"exit"
-};
-int (*inbuilt_func[]) (char **) = {
-	 &_cd,
-	 &env_hsh,
-	 &exit_hsh
-};
+int hsh_env(char **args);
+int hsh_exit(char **args);
+int check_command(char **args);
 #endif

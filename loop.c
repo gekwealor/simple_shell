@@ -19,7 +19,7 @@ void loop(void)
 			break;
 		}
 		args = tokenise(line);
-		status = execute(args);
+		status = check_command(args);
 
 		free(line);
 		free(args);
