@@ -27,5 +27,5 @@ int check_command(char **args)
 			return ((*builtin_func[i])(args));
 		}
 	}
-	return (-1);
+	return (execute(args));
 }
