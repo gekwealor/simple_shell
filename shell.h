@@ -22,4 +22,17 @@ char *_strtok(char *str, const char *delim);
 extern char **environ;
 int execute(char **args);
 char *find_path(char *command);
+int _cd(char **args);
+int env_hsh(char **args);
+int exit_hsh(char **args);
+char *inbuilt_str[] = {
+	"cd",
+	"env",
+	"exit"
+};
+int (*inbuilt_func[]) (char **) = {
+	 &_cd,
+	 &env_hsh,
+	 &exit_hsh
+};
 #endif
